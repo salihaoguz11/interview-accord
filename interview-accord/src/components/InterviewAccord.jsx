@@ -5,7 +5,7 @@ const InterviewAccord = (props) => {
   return (
     <div className="row">
       {data.map((item) => (
-        <Question key={item.id} id={item.id} question={item.question} />
+        <Question key={item.id} {...item} />
       ))}
     </div>
   );
