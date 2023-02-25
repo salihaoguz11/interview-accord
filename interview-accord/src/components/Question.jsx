@@ -4,6 +4,7 @@ import { arrowdown } from "../helper/icons";
 
 const Question = ({ id, question, answer }) => {
   const [show, setShow] = useState(false);
+  const handleToggle = () => setShow(!show);
   return (
     <div className="card-group">
       {show ? (
@@ -12,13 +13,7 @@ const Question = ({ id, question, answer }) => {
             <h5>
               {id}. {question}
             </h5>
-            <button
-              onClick={() => {
-                setShow(false);
-              }}
-            >
-              {arrowup}
-            </button>
+            <button onClick={handleToggle}>{arrowup}</button>
           </div>
           <p>{answer}</p>
         </div>
@@ -28,13 +23,7 @@ const Question = ({ id, question, answer }) => {
             <h5>
               {id}. {question}
             </h5>
-            <button
-              onClick={() => {
-                setShow(true);
-              }}
-            >
-              {arrowdown}
-            </button>
+            <button onClick={handleToggle}>{arrowdown}</button>
           </div>
         </div>
       )}
